@@ -9,6 +9,7 @@ Scenario: This is haniffa Sg Login test using the provider code
  When User see the login page enter the credentials 
 | durai|
 |Mani1206* |
+
  
  And User click the signup button
  
