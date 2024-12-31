@@ -18,7 +18,7 @@ Scenario: This is test for login the remit local
 
 Given User need to open the chrome and enter the remit local url
 
-When User enter the login detail "<UserName>" "<Password>"
+When User enter th e login detail "<UserName>" "<Password>"
 
 When Click the SIGN IN button
 
