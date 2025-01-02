@@ -6,7 +6,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="CucumberSample1/RemitLogin.feature",glue="StepDefination")
+@CucumberOptions(features="CucumberSample1"
+,glue="StepDefination",tags = "@negative and @Samplerun")
 public class RemitLoginRunner {
 
 }

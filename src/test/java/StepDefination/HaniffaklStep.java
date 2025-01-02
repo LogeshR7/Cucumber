@@ -7,6 +7,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -132,25 +134,35 @@ public class HaniffaklStep {
 	}
 	
 	@Then("The user will see the sucess message and also see the purchase order list page")
-	public void the_user_will_see_the_sucess_message_and_also_see_the_purchase_order_list_page() {
-	    
+	public void the_user_will_see_the_sucess_message_and_also_see_the_purchase_order_list_page() throws InterruptedException {
+	Thread.sleep(1000);
+		WebElement ele3= driver.findElement(By.xpath("//div[normalize-space(text())="
+	 		+ "'Success: You have added purchase!']"));  
+	 if (ele3.isDisplayed()) {
+		 System.out.println("Logesh Sucesss");	
+	}
 	    
 	}
 	
 	@When("User click the view icion on the list page to coinform the order")
-	public void user_click_the_view_icion_on_the_list_page_to_coinform_the_order() {
-	    
-	    
+	public void user_click_the_view_icion_on_the_list_page_to_coinform_the_order() throws Exception {
+	    driver.findElement(By.xpath("//i[@title='View']")).click();
+	    Thread.sleep(1000);
 	}
 	
 	@Then("User need to click the name located on the top right conor")
-	public void user_need_to_click_the_name_located_on_the_top_right_conor() {
-	    
+	public void user_need_to_click_the_name_located_on_the_top_right_conor() throws Exception {
+	    Thread.sleep(1000);
+		WebElement ele4=driver.findElement(By.xpath("//a[@data-close-others='true']"));
+	    Actions bulider=new Actions(driver);
+	    bulider.moveToElement(ele4);
+	   
 	    
 	}
 	
 	@Then("Click logout")
 	public void click_logout() {
+		driver.findElement(By.xpath("//a[text()=' Log Out']")).click();
 	    
 	}
 }
